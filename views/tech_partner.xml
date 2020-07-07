@@ -20,12 +20,22 @@
                    <attribute name="required">True</attribute>
                 </xpath>
                 
-                <xpath expr="/form/sheet/notebook/page[@name='sales_purchases']/group/group[@name='purchase']" position="after">
+                <!-- <xpath expr="/form/sheet/notebook/page[@name='sales_purchases']/group/group/group[@name='fiscal_information']/field[@name='property_account_position_id']" position="after">
                    <group>
                    <field name="payment_methode_id" widget="many2many_tags"/>
                    <field name="credit_limit" string="Plafond crédit"/>
                    <field name="credit" string="Solde crédit"/>
                     </group>
+                </xpath> -->
+                <xpath expr="//group[@name='fiscal_information']/field[@name='property_account_position_id']" position="after">
+                        <field name="payment_methode_id" widget="many2many_tags"/>
+                        <field name="credit_limit" string="Plafond crédit"/>
+                        <field name="credit" string="Solde crédit"/>
+                </xpath>
+
+                <xpath expr="/form/sheet/notebook/page[@name='sales_purchases']/group/group[@name='purchase']/field[@name='property_supplier_payment_term_id']" position="after">
+                   <field name="debit_limit" string="Plafond débit"/>
+                   <field name="debit" string="Solde débit"/>
                 </xpath>
                
                 <xpath expr="/form/sheet/notebook/page/field/form/sheet" position="replace">
